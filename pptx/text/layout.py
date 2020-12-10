@@ -107,7 +107,21 @@ class TextFitter(tuple):
         *line_source* wrapped within this fitter when rendered at
         *point_size*.
         """
-        text, remainder = self._break_line(line_source, point_size)
+
+        print(self._break_line(line_source, point_size))
+
+        res = self._break_line(line_source, point_size)
+        lines = None
+        if res is None:
+            print('noestupla')
+            print(type(res))
+            res = (res, None)
+            
+            
+        print('res')
+        print(res)
+
+        text, remainder = res
         lines = [text]
         if remainder:
             lines.extend(self._wrap_lines(remainder, point_size))
