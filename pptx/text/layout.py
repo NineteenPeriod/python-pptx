@@ -108,18 +108,10 @@ class TextFitter(tuple):
         *point_size*.
         """
 
-        print(self._break_line(line_source, point_size))
-
         res = self._break_line(line_source, point_size)
         lines = None
         if res is None:
-            print('noestupla')
-            print(type(res))
             res = (res, None)
-            
-            
-        print('res')
-        print(res)
 
         text, remainder = res
         lines = [text]
